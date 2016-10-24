@@ -1,6 +1,6 @@
 {
   "name": "neutrino-preset-taskcluster-web",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TaskCluster preset for building Neutrino web applications",
   "main": "src/index.js",
   "repository": {
@@ -21,8 +21,8 @@
     "neutrino": "^3.0.0"
   },
   "dependencies": {
-    "neutrino-preset-react": "^2.0.0",
-    "neutrino-preset-taskcluster": "^1.0.0",
+    "neutrino-preset-react": "^2.0.1",
+    "neutrino-preset-taskcluster": "^1.0.1",
     "webpack-merge": "^0.15.0"
   }
 }
