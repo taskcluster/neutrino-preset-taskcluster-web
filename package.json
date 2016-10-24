@@ -1,0 +1,28 @@
+{
+  "name": "neutrino-preset-taskcluster-web",
+  "version": "1.0.0",
+  "description": "TaskCluster preset for building Neutrino web applications",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taskcluster/neutrino-preset-taskcluster-web.git"
+  },
+  "keywords": [
+    "neutrino",
+    "neutrino-preset"
+  ],
+  "author": "Eli Perelman <eli@eliperelman.com>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/taskcluster/neutrino-preset-taskcluster-web/issues"
+  },
+  "homepage": "https://github.com/taskcluster/neutrino-preset-taskcluster-web#readme",
+  "peerDependencies": {
+    "neutrino": "^3.0.0"
+  },
+  "dependencies": {
+    "neutrino-preset-react": "^2.0.0",
+    "neutrino-preset-taskcluster": "^1.0.0",
+    "webpack-merge": "^0.15.0"
+  }
+}
