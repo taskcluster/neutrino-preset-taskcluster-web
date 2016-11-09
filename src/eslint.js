@@ -1,21 +1,45 @@
 'use strict';
 
-const merge = require('webpack-merge');
-const rules = require('neutrino-preset-taskcluster/src/eslint').rules;
-
 module.exports = {
   extends: [
-    require.resolve('neutrino-preset-react/src/eslint')
+    require.resolve('neutrino-preset-taskcluster/src/eslint')
   ],
-  rules: merge(rules, {
-    // Disallow trailing commas.
-    'comma-dangle': ['error', 'never'],
+  plugins: ['react'],
+  globals: {
+    Buffer: true
+  },
+  env: {
+    browser: true,
+    commonjs: true,
+    node: false
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      experimentalObjectRestSpread: true,
+      jsx: true
+    }
+  },
+  settings: {
+    pragma: 'React',
+    version: '15.0'
+  },
+  rules: {
+    // Allow using class methods with static/non-instance functionality
+    // React lifecycle methods commonly do not use an instance context for anything
+    'class-methods-use-this': 'off',
+
+    // specify whether double or single quotes should be used in JSX attributes
+    // http://eslint.org/docs/rules/jsx-quotes
+    'jsx-quotes': ['error', 'prefer-double'],
 
     // Allow console during development
     'no-console': process.env.NODE_ENV === 'development' ? 'off' : 'error',
 
     // Allow extra parentheses since multiline JSX being wrapped in parens is considered idiomatic
     'no-extra-parens': 'off',
+
+    // Since TaskCluster frontend strives to be more functional than Node.js, we prefer const over let
+    'prefer-const': 'error',
 
     // Allow usage of ReactDOM.findDOMNode
     'react/no-find-dom-node': 'off',
@@ -58,6 +82,9 @@ module.exports = {
     'react/jsx-space-before-closing': ['error', 'always'],
 
     // Ensure multiline JSX is wrapped in parentheses
-    'react/jsx-wrap-multilines': 'error'
-  })
+    'react/jsx-wrap-multilines': 'error',
+
+    // Disable enforcement of React PropTypes
+    'react/prop-types': 'off'
+  }
 };

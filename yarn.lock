@@ -471,7 +471,7 @@ babel-plugin-transform-async-generator-functions@^6.17.0:
     babel-plugin-syntax-async-generators "^6.5.0"
     babel-runtime "^6.0.0"
 
-babel-plugin-transform-async-to-generator@^6.16.0:
+babel-plugin-transform-async-to-generator@^6.16.0, babel-plugin-transform-async-to-generator@6.16.0:
   version "6.16.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-async-to-generator/-/babel-plugin-transform-async-to-generator-6.16.0.tgz#19ec36cb1486b59f9f468adfa42ce13908ca2999"
   dependencies:
@@ -760,6 +760,13 @@ babel-plugin-transform-runtime@6.15.0:
   dependencies:
     babel-runtime "^6.9.0"
 
+babel-plugin-transform-strict-mode@^6.18.0:
+  version "6.18.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-strict-mode/-/babel-plugin-transform-strict-mode-6.18.0.tgz#df7cf2991fe046f44163dcd110d5ca43bc652b9d"
+  dependencies:
+    babel-runtime "^6.0.0"
+    babel-types "^6.18.0"
+
 babel-plugin-transform-strict-mode@^6.8.0:
   version "6.11.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-strict-mode/-/babel-plugin-transform-strict-mode-6.11.3.tgz#183741325126bc7ec9cf4c0fc257d3e7ca5afd40"
@@ -897,6 +904,15 @@ babel-traverse@^6.14.0, babel-traverse@^6.15.0, babel-traverse@^6.16.0, babel-tr
 babel-types@^6.10.2, babel-types@^6.13.0, babel-types@^6.14.0, babel-types@^6.15.0, babel-types@^6.16.0, babel-types@^6.8.0, babel-types@^6.9.0:
   version "6.16.0"
   resolved "https://registry.yarnpkg.com/babel-types/-/babel-types-6.16.0.tgz#71cca1dbe5337766225c5c193071e8ebcbcffcfe"
+  dependencies:
+    babel-runtime "^6.9.1"
+    esutils "^2.0.2"
+    lodash "^4.2.0"
+    to-fast-properties "^1.0.1"
+
+babel-types@^6.18.0:
+  version "6.18.0"
+  resolved "https://registry.yarnpkg.com/babel-types/-/babel-types-6.18.0.tgz#1f7d5a73474c59eb9151b2417bbff4e4fce7c3f8"
   dependencies:
     babel-runtime "^6.9.1"
     esutils "^2.0.2"
@@ -3536,29 +3552,6 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-neutrino-preset-base@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/neutrino-preset-base/-/neutrino-preset-base-2.0.0.tgz#f46c994a8a6385ca89f9e425b3b8320b186dfb0a"
-  dependencies:
-    babel-core "6.17.0"
-    babel-loader "6.2.5"
-    babel-plugin-istanbul "2.0.3"
-    babel-preset-es2015 "6.16.0"
-    clean-webpack-plugin "0.1.13"
-    copy-webpack-plugin "3.0.1"
-    deepmerge "1.2.0"
-    eslint "3.8.1"
-    eslint-loader "1.6.0"
-    eslint-plugin-babel "3.3.0"
-    eslint-plugin-import "2.0.1"
-    eslint-plugin-mocha "4.7.0"
-    exports-loader "0.6.3"
-    imports-loader "0.6.5"
-    json-loader "0.5.4"
-    progress-bar-webpack-plugin "1.9.0"
-    webpack "1.13.2"
-    webpack-merge "0.15.0"
-
 neutrino-preset-base@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/neutrino-preset-base/-/neutrino-preset-base-2.0.1.tgz#8267e57587219bba520226805afc60f08bb1b09d"
@@ -3583,17 +3576,42 @@ neutrino-preset-base@2.0.1:
     webpack "1.13.2"
     webpack-merge "0.15.0"
 
-neutrino-preset-node@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/neutrino-preset-node/-/neutrino-preset-node-2.0.0.tgz#2acab27e21a56dbe7f1b83f1f7f2dd1174c9d8ee"
+neutrino-preset-base@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/neutrino-preset-base/-/neutrino-preset-base-2.1.0.tgz#fbddf69c1e55df22c8dbce6bb98c2d55e9bb58be"
   dependencies:
+    babel-core "6.17.0"
+    babel-eslint "7.0.0"
+    babel-loader "6.2.5"
+    babel-plugin-istanbul "2.0.3"
+    babel-preset-es2015 "6.16.0"
+    clean-webpack-plugin "0.1.13"
+    copy-webpack-plugin "3.0.1"
+    deepmerge "1.2.0"
+    eslint "3.8.1"
+    eslint-loader "1.6.0"
+    eslint-plugin-babel "3.3.0"
+    eslint-plugin-import "2.0.1"
+    eslint-plugin-mocha "4.7.0"
+    exports-loader "0.6.3"
+    imports-loader "0.6.5"
+    json-loader "0.5.4"
+    progress-bar-webpack-plugin "1.9.0"
+    webpack "1.13.2"
+    webpack-merge "0.15.0"
+
+neutrino-preset-node@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/neutrino-preset-node/-/neutrino-preset-node-2.3.0.tgz#db8341a476ef03444a0ad5dbcdde0d9b43cf49da"
+  dependencies:
+    babel-plugin-transform-async-to-generator "6.16.0"
     babel-plugin-transform-runtime "6.15.0"
     babel-runtime "6.11.6"
-    neutrino-preset-base "2.0.0"
+    neutrino-preset-base "2.1.0"
     webpack-merge "0.15.0"
     webpack-node-externals "1.5.4"
 
-neutrino-preset-react, neutrino-preset-react@^2.0.1:
+neutrino-preset-react:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/neutrino-preset-react/-/neutrino-preset-react-2.0.1.tgz#1efc85dd7c7d9150d4be384643e541f42b259a61"
   dependencies:
@@ -3605,12 +3623,13 @@ neutrino-preset-react, neutrino-preset-react@^2.0.1:
     react-hot-loader "1.3.0"
     webpack-merge "0.15.0"
 
-neutrino-preset-taskcluster:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/neutrino-preset-taskcluster/-/neutrino-preset-taskcluster-1.0.1.tgz#cece619322d7c225b48cf638e54815d8bc8b5e64"
+neutrino-preset-taskcluster@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/neutrino-preset-taskcluster/-/neutrino-preset-taskcluster-2.0.0.tgz#77b66e38929b7eb317118f882546d44b46fa7553"
   dependencies:
-    neutrino-preset-node "^2.0.0"
-    neutrino-preset-react "^2.0.1"
+    babel-plugin-transform-object-rest-spread "^6.16.0"
+    babel-plugin-transform-strict-mode "^6.18.0"
+    neutrino-preset-node "2.3.0"
     webpack-merge "^0.15.0"
 
 neutrino-preset-web@2.0.1:
